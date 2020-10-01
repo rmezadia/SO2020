@@ -1,0 +1,148 @@
+AaUNI MERIDA 2019
+AaUNI MERIDA 2020
+Applications
+Applications (Parallels)
+CRUCIGRAMAS
+Del Windows al Mac
+Desktop
+Documents
+Downloads
+Eclipse alias
+Library
+Movies
+Music
+P1 Crucigrama Ricardo Meza Diaz
+Parallels
+Pictures
+Prismic Repository
+ProyectosAndroidStudio
+PruebaPractica.csv
+Public
+RMI
+RcmdrMarkdown.Rmd
+Redes Neuronales
+Tomcat
+Tomorrow
+VirtualBox VMs
+a.out
+a.txt
+apache-maven-3.6.3
+apdcum.sh
+cadenas.sh
+drupal
+eclipse
+eclipse-workspace-TWB
+eclipsemac-workspace
+eclipsemac-workspace-MDP
+eclipsemac-workspace-MDP2020
+eclipsemac-workspace-SEI
+ejemplocosasbasicas.html
+ejercicico2tarea.c
+ejercicio1tarea.c
+ejercicio2tarea
+ejercicio2tarea.c
+ejercicio3
+ejercicio3.c
+ejercicio3gestionprocesos.c
+ejercicio3tarea
+ejercicio3tarea.c
+ejercicioalarmasigaction
+ejercicioalarmasigaction.c
+ejercicioalarmatuberia.c
+ejerciciomajosequesubiohecho
+ejerciciomajosequesubiohecho.c
+ejerciciomemoriacompartida
+ejerciciomemoriacompartida.c
+ejerciciosignal
+ejerciciosignal.c
+ejerciciotuberiasalarma
+ejerciciotuberiasalarma.c
+elrincondejulita
+elrincondejulitaofficial
+elrincondejulitaofficial con la clave live snipcart.zip
+elrincondejulitaofficial.zip
+entrada.csv
+escritor
+escritor.c
+esn-test-master
+esn-test-master (1).zip
+esn-test-master2
+fconfiguracion.csv
+fescaleras.txt
+ficherocolumnapatron.csv
+ficherocolumnas.csv
+ficherodesalidapatron.csv
+firebase-debug.log
+fmov_idproceso.csv
+ftoboganes.txt
+get-pip.py
+hamcrest-core-1.3.jar
+heroku-express-react
+html.html
+install.sh
+javafx-jmods-11.0.2
+javafxsdk1102
+javamail-1.4.5
+javax.mail.jar
+jugar.html
+junit-4.11.jar
+lanza
+lector
+lector.c
+leeFichero
+leeFichero.c
+leerFichero
+leerFichero.c
+main.c
+mango-crucigram-master
+meterdatosenMatriz.sh
+mostrarElementosMatriz.sh
+node-js-getting-started
+node_modules
+nodejs-example-snipcart-master
+nodejs-example-snipcart-master.zip
+opt
+package-lock.json
+package.json
+pagina tecnologia web
+pagina web 2
+pagina web codepen 2 8.39.43
+phpMyAdmin-5.0.2-all-languages
+practica1.sh
+practica2
+practica2.c
+primerprograma.c
+prueba
+prueba.csv
+pruebastrtok
+pruebastrtok.c
+python-virtual-environments
+rmi-1.5.1-sources.jar
+segundoprograma.c
+simpleRMIExample
+sqljdbc4.jar
+stoer_wagner_min_cut.hpp
+swagger.json
+tercerprograma
+tercerprograma.c
+test esn trabajo.zip
+test.sh
+tuberiamariajose
+tuberiamariajose.c
+tuberias
+tuberias.c
+usuarios.csv
+usuarios1.csv
+usuariosColumnasSeleccionadas.csv
+usuariosOrdSinCrit.csv
+usuariosPorValNumAlf.csv
+usuariosPorValNumDesc.csv
+usuariosSegCampAlf.csv
+usuariosdesdesegundocampo.csv
+usuariosincabecera.csv
+usuariossegundocampo.csv
+web
+workspace java
+yarn-error.log
+yarn.lock
+‘~
