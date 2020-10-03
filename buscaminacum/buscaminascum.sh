@@ -73,16 +73,20 @@ function menuUntil(){
 	do 
  		case $var in
      		1)
-       			echo "opcion 1"
+       			echo "\n"
         		volverAtras
      			;;
      		2)
-      			echo "opcion 2"
+      			echo "\n"
+            cat Readme.txt
+            echo "\n"
+            menuUntil
      			;;
     		3)
         		exit 0
         		;;
-    		*)
+    		*)  
+            echo "\n"
        			echo "Ha introducido un numero incorrecto."
      			;;
   		esac
