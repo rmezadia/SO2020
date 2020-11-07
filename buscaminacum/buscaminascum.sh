@@ -1,7 +1,7 @@
 #Buscaminascum 2020. 
 #Autor Ricardo Meza Díaz
 
-#---------------------------------VARIABLES GLOBALES-----------------------
+#--------------------------------VARIABLES GLOBALES---------------------#
 
 #Contador de puntos
 puntos=0
@@ -17,8 +17,7 @@ g="1 4 6 9 10 15 20 25 30 -30 -24 -11 -10 -9 -8 -7"
 #Definicion de la matriz Variable celda almacena el valor de cada celda
 declare -a matriz
 
-
-
+#--------------------------------VARIABLES GLOBALES---------------------#
 
 function uso(){
   cat <<_EOF_
@@ -58,7 +57,8 @@ function menuPrincipal(){
 	echo "|.......................2.Ayuda.................................|"
 	echo "|.......................3.Salir.................................|"
 	echo "|_______________________________________________________________|"
-
+  
+  echo -e "\n"
 	echo "Pulse 1,2 o 3:"
 }
 
@@ -74,56 +74,79 @@ function menuNivel(){
 	echo "|..................2. Volver....................................|"
 	echo "|..................3. Salir.....................................|"
 	echo "|_______________________________________________________________|"
-	echo -e '\n'
-
-	echo "Pulse 1:"
+	
+  echo -e '\n'
+  echo "Pulse 1,2 o 3:"
 
 }
 
-#Menú que permite retroceder al menú anterior.
+#Menú que permite al usuario retroceder al menú anterior.
 
 function volverAtras(){
-	menuNivel
+	
+  menuNivel                           #Llamada menu de seleccionar nivel.
 	read var 
 
-	until [ $var -eq 4 ]
+	until [ $var -eq 4 ]                #Control opciones por teclado del menu nivel.
 	do 
  		case $var in
-     		1)
-       			echo "opcion 1"
-            
+     		
+        1)
+       			
+            echo "¡EMPIEZA EL JUEGO!"  
+            echo -e "n"
             trap tiempoEspera INT
 
             uso
-            creaTablero
+            creaTablero               #Crea tablero a partir de ahí permite jugar, llamando a otras funciones.         
 
-            #Controlador de introducción por de clado de coordenadas
-            #Para introducir por teclado la fila y la columna del tablero, escriba por ejemplo:
-            #en este orden, columna g fila 5: g5 , y puelse enter, y así sucesivamente 
-            #hasta terminar el juego.
+           
+          
+            #Permite al usuario ingresar la fila y la columna a la vez tantas veces hasta que pierda o gane la partida.
+            #Si quiere ingresar fila 2 columna h, la sintaxis correspondiente es: 
+            # h2 
+            #Primero columna y luego fila, sin espacio, en ese orden y en minúsculas.
+
             while true; do 
               read -p "Introduzca una coordenada: " opcion
-              obtenerCoordenadas
+
+              #Busca en el tablero las coordenas ingresadas por el usuario anteriormente.
+              #Si son validas o no.
+              obtenerCoordenadas                                             
+           
             done
-     			;;
-     		2)
-      			echo "opcion 2"
-      			menuUntil
-     			;;
+     			
+          ;;
+
+     		2) 
+      			echo -e "\n"
+            echo "Usted ha vuelto al menu anterior."
+            echo -e "\n"
+
+      			menuUntil                                  #Menu anterior al elegir nivel.                               
+     			  
+            ;;
+
     		3)
-        		exit 0 
-        		;;
+        		#Sale del juego
+            salir
+        		
+            ;;
+
     		*)
        			echo "Ha introducido un numero incorrecto."
-     			;;
+     			  ;;
+
   		esac
+
   		read var 
+
   	done
 }
 
 #Funcionalidad que permite salir del juego, cuando se muestre la op en el menú.
 
-function Salir(){
+function salir(){
 	echo "Se ha cerrado el juego."
 	exit 0
 }
@@ -132,31 +155,42 @@ function Salir(){
 #También, controla las opciones introducidas por teclado.
 
 function menuUntil(){
-	menuPrincipal
+	
+  menuPrincipal                         #Primer menu que aparece al iniciar el programa.
 	read var
 	
-	until [ $var -eq 4 ]
+	until [ $var -eq 4 ]                  #Control opciones por teclado del menu principal.
 	do 
+
  		case $var in
      		1)
        			echo -e "\n"
-        		volverAtras
-     			;;
-     		2)
+        		volverAtras                 #Menu anterior
+     			
+          ;;
+     		
+        2)
       			echo -e "\n"
-            cat Readme.txt
+            cat Readme.txt              #Muestra ayuda desde ese fichero.
             echo -e "\n"
-            menuUntil
-     			;;
-    		3)
-        		exit 0
-        		;;
+            menuUntil                   #Menu de vuevo para jugar.
+     			
+          ;;
+    		
+        3)  
+        		Salir                       #Permite salir del programa.
+        		
+            ;;
     		*)  
-            echo -e  "\n"
+           
+           echo -e  "\n"
        			echo "Ha introducido un numero incorrecto."
-     			;;
-  		esac
-  		read var 
+     			
+          ;;
+  		
+      esac
+  		
+      read var 
   	done
   	
 }
@@ -168,20 +202,21 @@ function menuUntil(){
 #-------------------------------FUNCIONES TABLERO---------------------
 
 
-#Pinta matriz 
+#Pinta matriz, tablero de 20x20. 
 function creaTablero(){
 
 
   contador=0 
 
-  #Encabezado de columnas con espaciado
+  #Encabezado de columnas con espaciado.
+  #Columnas tienen letras, filas tendrán número.
   printf '\n\n'
   printf '%s' "      a   b   c   d   e  f  g   h   i   j"
   printf '\n    %s\n' "----------------------------------------"
 
   
 
-  #Imprime filas del 0 al 9 
+  #Imprime filas del 0 al 9. 10 filas.
   for fil in $(seq 0 9); do 
     printf '%d ' "$fil"
 
@@ -264,11 +299,13 @@ function obtenerMinas(){
 
 #Ayuda a obtener minas
 
-#-----------------------FIN FUNCIONES TABLERO---------------------
+#-----------------------FIN FUNCIONES TABLERO------------------------------------------#
 
 #voy por metodo is_null_field() inclusive
 
-#---------------------------LOGICA JUGADOR------------------------
+#---------------------------LOGICA JUGADOR---------------------------------------------#
+
+#Permite encontrar la coordenada fila y columna que el usuario ha ingresado por teclado.
 function obtenerCoordenadas(){
   
   col=${opcion:0:1}
